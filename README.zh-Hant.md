@@ -25,8 +25,8 @@ tak2flac -i "tak檔案位置" [-o "輸出目錄"] [-cue "附加cue檔案位置"]
     FFMPEG_BINARY="FFMpeg二進制檔案位置"
     FFPROBE_BINARY="FFProbe二進制檔案位置"
   ```
-* 關閉所有cmd實例用於應用環境變數的變動 
-* 下載tak2flac的Release包 內容物解包到可以是在Windows目錄下 又或者Path指定到的地方
+* 下載tak2flac的Release包 內容物解包到可以是在Windows目錄下 又或者Path指定到的地方 (也可以直接解包到跟FFMpeg一起 然後讓Path環境變數匯入這個目錄)
+* 關閉所有cmd實例用於應用環境變數的變動  
 * 起動cmd, 輸入tak2flac (如果是用mono的請重新起動終端機, 輸入 mono tak2flac).
 * 應該會返回空訊息, 否則需要重新設定
 #### EZ的安裝方式
