@@ -25,6 +25,7 @@ tak2flac -i "input.tak" [-o "output_path"] [-cue "additional_cue_path"]
     FFMPEG_BINARY="Path of ffmpeg binary"
     FFPROBE_BINARY="Path of ffprobe binary"
   ```
+* Download tak2flac release zip file and unpack it to folder that PATH contained (or add FFMpeg binary folder and unpack to there)
 * Close all command prompt (terminal) instance for apply changes of environment variable.
 * run command prompt and type tak2flac (or terminal if you use mono, type mono tak2flac).
 * It should be no any messages. Otherwize you should reconfigure it.
