@@ -1,5 +1,5 @@
 # tak2flac
-Simple tak spliter with FFMpeg and FFProbe
+Simple tak splitter with FFMpeg and FFProbe
 
 ### Requirements
 * Latest FFMpeg and FFProbe binaries
