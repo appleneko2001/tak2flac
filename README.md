@@ -14,21 +14,31 @@ tak2flac -i "input.tak" [-o "output_path"] [-cue "additional_cue_path"]
 
 ### Install
 #### Install it with hard way
-* Download [FFMpeg](https://ffmpeg.org/download.html) if you don't have it.
-* Extract FFMpeg archive file to somewhere, for example, to C:\Program files\FFMpeg
-* Define two environment variable named FFMPEG_BINARY and FFPROBE_BINARY, they should be pointed to path of ffmpeg binary and ffprobe binary.
-  * Windows way:
-  It can be changed by right-click "My Computer" (or "This PC") -> "Properties" -> "System" on right side of window -> "Advanced" tab -> "Environment Variables..." -> New system variables -> Create variable named FFMPEG_BINARY and FFPROBE_BINARY, value should write path of those binary.
-  * Linux way: 
-  Write those things on last line of your ~/.profile (or similar like that)
+* Windows way:
+  * Download [FFMpeg](https://ffmpeg.org/download.html) if you don't have it.
+  * Extract FFMpeg archive file to somewhere, for example, to C:\Program files\FFMpeg
+  * Define two environment variable named FFMPEG_BINARY and FFPROBE_BINARY, they should be pointed to path of ffmpeg binary and ffprobe binary. 
+  > It can be changed by right-click "My Computer" (or "This PC") -> "Properties" -> "System" on right side of window -> "Advanced" tab -> "Environment Variables..." -> New system variables -> Create variable named FFMPEG_BINARY and FFPROBE_BINARY, value should write path of those binary.
+  * Download tak2flac release zip file and unpack it to folder that PATH contained (or add FFMpeg binary folder and unpack to there)
+  * run command prompt and type tak2flac.
+  * It should be no any messages. Otherwize you should reconfigure it.
+
+
+* Linux way (sudo will be required for elevated privileges): 
+  * Use package manager (apt/yum/snap or etc..) install FFMpeg. For install mono you can visit this page
+  ```sh
+  sudo apt update
+  sudo apt install ffmpeg
+  ``` 
+  * Write those things on last line of your ~/.profile (or similar like that)
   ```sh
     FFMPEG_BINARY="Path of ffmpeg binary"
     FFPROBE_BINARY="Path of ffprobe binary"
   ```
-* Download tak2flac release zip file and unpack it to folder that PATH contained (or add FFMpeg binary folder and unpack to there)
-* Close all command prompt (terminal) instance for apply changes of environment variable.
-* run command prompt and type tak2flac (or terminal if you use mono, type mono tak2flac).
-* It should be no any messages. Otherwize you should reconfigure it.
+  * Download tak2flac release zip file and unpack it to folder that PATH contained. For example, /usr/bin
+  * Give file mode 0755 to tak2flac.exe (chmod 0755 tak2flac.exe), after that you can rename it for shorter filename
+  * Run terminal, type mono tak2flac.exe and it should returned empty message.
+  
 #### Install it with easy way 
 Still not ready.
 
