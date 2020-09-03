@@ -1,3 +1,5 @@
+[Cannot understand? Click here to show English readme!](https://github.com/appleneko2001/tak2flac/blob/master/README.md)
+
 # tak2flac
 依靠 FFMpeg 和 FFProbe 的簡易tak分離器
 
