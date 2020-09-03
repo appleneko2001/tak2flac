@@ -5,7 +5,7 @@ Simple tak splitter with FFMpeg and FFProbe
 * Latest FFMpeg and FFProbe binaries
 * Environment variables that contains path of FFMpeg and FFProbe binaries
 * (For Windows).Net framework 4 (Windows 7 or newer are installed with OS)
-* (For Linux) Mono runtime that supports .Net framework 4
+* (For Linux) ~~Mono runtime that supports .Net framework 4~~ USE DOTNET CORE 3.1 INSTEAD!!! [Official instructions of install .Net Core](https://docs.microsoft.com/dotnet/core/install/linux-package-managers)
 
 ### How to use
 ```sh
@@ -25,7 +25,7 @@ tak2flac -i "input.tak" [-o "output_path"] [-cue "additional_cue_path"]
 
 
 * Linux way (sudo will be required for elevated privileges): 
-  * Use package manager (apt/yum/snap or etc..) install FFMpeg. For install mono you can visit this page
+  * Use package manager (apt/yum/snap or etc..) install FFMpeg. ~~For install mono you can visit this page~~ We have dotNet Core Binaries so just install dotNet Core instead!
   ```sh
   sudo apt update
   sudo apt install ffmpeg
@@ -35,9 +35,10 @@ tak2flac -i "input.tak" [-o "output_path"] [-cue "additional_cue_path"]
     FFMPEG_BINARY="Path of ffmpeg binary"
     FFPROBE_BINARY="Path of ffprobe binary"
   ```
-  * Download tak2flac release zip file and unpack it to folder that PATH contained. For example, /usr/bin
-  * Give file mode 0755 to tak2flac.exe (chmod 0755 tak2flac.exe), after that you can rename it for shorter filename
-  * Run terminal, type mono tak2flac.exe and it should returned empty message.
+  > !Tips! After set up environment variables they could not applied on current session. Reboot computer and changes will applied.
+  * Download tak2flac core release zip file and unpack it to folder that PATH contained. For example, /usr/bin
+  * Give file mode 0755 to tak2flac (chmod 0755 tak2flac).
+  * Run terminal, type mono tak2flac and it should returned empty message.
   
 #### Install it with easy way 
 Still not ready.
