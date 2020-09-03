@@ -6,6 +6,7 @@
 * 指定了 FFMpeg 和 FFProbe 二進制檔案位置的環境變數
 * (Windows) .Net framework 4 (Windows 7 或者更新的OS不需要 因爲已經附帶)
 * (Linux) ~~支援.Net framework 4 的Mono運作環境~~ 用dotNet Core 代替方案! [官方Linux設定說明](https://docs.microsoft.com/dotnet/core/install/linux-package-managers)
+* (Linux) 如果使用dotNet Core, 確定你的Linux OS是64位元的 否則建議用mono
 
 ### 如何使用
 ```sh
@@ -42,7 +43,12 @@ tak2flac -i "tak檔案位置" [-o "輸出目錄"] [-cue "附加cue檔案位置"]
   * 應該會返回空訊息, 否則需要重新設定
 
 #### EZ的安裝方式
-暫時還沒有... Linux的設定腳本過不了多久就做好了!
+暫時還沒有給Windows用的方案 但是我們有給Linux OS用的安裝腳本!
+```sh
+curl -sS https://raw.githubusercontent.com/appleneko2001/tak2flac/master/install-tak2flac.sh > install-tak2flac.sh
+chmod +x ./install-tak2flac.sh
+./install-tak2flac.sh
+```
 
 ### 它是如何運作的
 用於正常運作的話 需要帶有內置cuesheet數據的tak媒體檔案 又或者tak和cue檔案 否則什麼都做不了:(

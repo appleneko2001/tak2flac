@@ -6,6 +6,7 @@ Simple tak splitter with FFMpeg and FFProbe
 * Environment variables that contains path of FFMpeg and FFProbe binaries
 * (For Windows).Net framework 4 (Windows 7 or newer are installed with OS)
 * (For Linux) ~~Mono runtime that supports .Net framework 4~~ USE DOTNET CORE 3.1 INSTEAD!!! [Official instructions of install .Net Core](https://docs.microsoft.com/dotnet/core/install/linux-package-managers)
+* (For Linux) Be sure your linux OS architecture are x64, if you want use dotNet Core. Otherwize use mono recommended.
 
 ### How to use
 ```sh
@@ -41,7 +42,12 @@ tak2flac -i "input.tak" [-o "output_path"] [-cue "additional_cue_path"]
   * Run terminal, type tak2flac and it should returned empty message.
   
 #### Install it with easy way 
-Still not ready.
+Still not ready for windows. But we have install script for linux OS.
+```sh
+curl -sS https://raw.githubusercontent.com/appleneko2001/tak2flac/master/install-tak2flac.sh > install-tak2flac.sh
+chmod +x ./install-tak2flac.sh
+./install-tak2flac.sh
+```
 
 ### How it works?
 For works correctly should have .tak file with cue or both file, no cuesheet will not work.
