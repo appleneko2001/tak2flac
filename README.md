@@ -36,9 +36,9 @@ tak2flac -i "input.tak" [-o "output_path"] [-cue "additional_cue_path"]
     FFPROBE_BINARY="Path of ffprobe binary"
   ```
   > !Tips! After set up environment variables they could not applied on current session. Reboot computer and changes will applied.
-  * Download tak2flac core release zip file and unpack it to folder that PATH contained. For example, /usr/bin
+  * Download tak2flac core release zip file and unpack it to folder that PATH contained. For example, /usr/bin (or ~/.local/bin directory instead if .profile contains auto-detect and set PATH variables, no sudo requirement but only this user can use tak2flac)
   * Give file mode 0755 to tak2flac (chmod 0755 tak2flac).
-  * Run terminal, type mono tak2flac and it should returned empty message.
+  * Run terminal, type tak2flac and it should returned empty message.
   
 #### Install it with easy way 
 Still not ready.

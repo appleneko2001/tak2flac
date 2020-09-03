@@ -5,7 +5,7 @@
 * FFMpeg 和 FFProbe 的二進制檔案 建議使用最新版本
 * 指定了 FFMpeg 和 FFProbe 二進制檔案位置的環境變數
 * (Windows) .Net framework 4 (Windows 7 或者更新的OS不需要 因爲已經附帶)
-* (Linux) 支援.Net framework 4 的Mono運作環境
+* (Linux) ~~支援.Net framework 4 的Mono運作環境~~ 用dotNet Core 代替方案! [官方Linux設定說明](https://docs.microsoft.com/dotnet/core/install/linux-package-managers)
 
 ### 如何使用
 ```sh
@@ -29,19 +29,20 @@ tak2flac -i "tak檔案位置" [-o "輸出目錄"] [-cue "附加cue檔案位置"]
   sudo apt update
   sudo apt install ffmpeg
   ``` 
-  Mono的安裝方式可以[點擊這裏](https://www.mono-project.com/download/stable/#download-lin)去到官方網站的下載說明
+  ~~Mono的安裝方式可以點擊這裏去到官方網站的下載說明~~ 去用dotNet Core版本啦幹 
   * 寫入下面的內容到你的 ~/.profile (或者有點相似的)
    ```sh
      FFMPEG_BINARY="FFMpeg二進制檔案位置"
      FFPROBE_BINARY="FFProbe二進制檔案位置"
    ```
-  * 下載tak2flac的Release包 內容物解包到哪裏都可以 不過要確保Path環境變數有指定到 比如/usr/bin下面 
-  * 賦予0755的chmod給tak2flac.exe 如果有需要的話可以改名字成tak2flac
-  * 起動終端機 輸入mono tak2flac (又或者你給它改了名字 那就輸入它的完全名字) 
+  > 設定完環境變數檔案後可能不會立即變動 需要重新開機 某些情況下
+  * 下載tak2flac的Release包 內容物解包到哪裏都可以 不過要確保Path環境變數有指定到 比如/usr/bin下面 (其實也可以放在~/.local/bin目錄下的 如果.profile有自動偵測並設定Path的功能的話也是可以的 這樣也不需要 sudo 不過就只能由這個用戶使用)
+  * 賦予0755的chmod給tak2flac
+  * 起動終端機 輸入tak2flac
   * 應該會返回空訊息, 否則需要重新設定
 
 #### EZ的安裝方式
-暫時還沒有...
+暫時還沒有... Linux的設定腳本過不了多久就做好了!
 
 ### 它是如何運作的
 用於正常運作的話 需要帶有內置cuesheet數據的tak媒體檔案 又或者tak和cue檔案 否則什麼都做不了:(
