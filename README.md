@@ -1,7 +1,7 @@
 [看不懂英文嗎 來這裡!](https://github.com/appleneko2001/tak2flac/blob/master/README.zh-Hant.md)
 
 # tak2flac
-Simple tak splitter with FFMpeg and FFProbe
+Simple TAK (Tom's Lossless Audio Kompressor) audio splitter with FFMpeg and FFProbe. For more about TAK format: [Hydrogenaudio Wiki](https://wiki.hydrogenaud.io/index.php?title=TAK)
 
 ### Requirements
 * Latest FFMpeg and FFProbe binaries
