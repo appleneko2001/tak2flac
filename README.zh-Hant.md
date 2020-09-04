@@ -1,7 +1,7 @@
 [Cannot understand? Click here to show English readme!](https://github.com/appleneko2001/tak2flac/blob/master/README.md)
 
 # tak2flac
-依靠 FFMpeg 和 FFProbe 的簡易tak分離器
+依靠 FFMpeg 和 FFProbe 的簡易TAK (托馬斯無損音質壓縮編碼) 音訊檔分離器. 關於TAK音訊檔的更多資訊: [維基百科](https://zh.wikipedia.org/wiki/TAK), [Hydrogenaudio 百科](https://wiki.hydrogenaud.io/index.php?title=TAK), [百度百科 (簡體中文)](https://baike.baidu.com/item/Tak)
 
 ### 需求
 * FFMpeg 和 FFProbe 的二進制檔案 建議使用最新版本
