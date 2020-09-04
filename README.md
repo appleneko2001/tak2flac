@@ -56,7 +56,7 @@ For works correctly should have .tak file with cue or both file, no cuesheet wil
 
 First, this program will use FFProbe to get input media information to gather cuesheet, duration and tags.
 After that program will parses cuesheet data and generate process parameters for FFMpeg spliting, and writing tags.
-When our parameters has ready, and finally FFMpeg will started working with those parameters and we will have splited media files from .tak
+When our parameters ready for use, the FFMpeg will started working with our parameters and we will have splited media files from .tak
 
 ### Want to improve this program
 Any suggestions are accepted and report bugs! Create issue and just tell me your suggestion or problem when using this program.
