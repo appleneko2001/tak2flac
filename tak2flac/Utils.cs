@@ -28,11 +28,31 @@ namespace tak2flac
             return Regex.Split(s, delimiter + "(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
         }
 
-        public static string PatchFilePath(this string s) {
-            //return new FileInfo(s).FullName;
+        public static string PatchFilePath(this string s) { 
             return Path.GetFullPath(s);
         }
-
+        public static string PatchFilePath(this string s, string workingDir)
+        {
+            var f = MakeRelativePath(Path.GetFullPath(s), workingDir);  
+            return f;
+        }
+        // https://gist.github.com/AlexeyMz/183b3ab2c4dbb0a7de5b
+        static string MakeRelativePath(string absolutePath, string pivotFolder)
+        {
+            //string folder = Path.IsPathRooted(pivotFolder)
+            //    ? pivotFolder : Path.GetFullPath(pivotFolder);
+            string folder = pivotFolder;
+            Uri pathUri = new Uri(absolutePath);
+            // Folders must end in a slash
+            if (!folder.EndsWith(Path.DirectorySeparatorChar.ToString()))
+            {
+                folder += Path.DirectorySeparatorChar;
+            }
+            Uri folderUri = new Uri(folder);
+            Uri relativeUri = folderUri.MakeRelativeUri(pathUri);
+            return Uri.UnescapeDataString(
+                relativeUri.ToString().Replace('/', Path.DirectorySeparatorChar));
+        }
         public static string RemoveUnnecessarySpaces(this string s)
         {
             if (!s.StartsWith(" "))

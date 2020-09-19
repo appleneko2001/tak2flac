@@ -8,3 +8,9 @@
 /tak2flac/FFMetadata.cs
 /tak2flac.Test/obj
 /.vs
+/build
+/tak2flac/.vs/tak2flac.Core/DesignTimeBuild
+/tak2flac/.vs/tak2flac.Core/v16
+/tak2flac/Properties/launchSettings.json
+/tak2flac/tak2flac.csproj.user
+/tak2flac.7z
