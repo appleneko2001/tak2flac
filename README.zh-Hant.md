@@ -1,4 +1,4 @@
-[Cannot understand? Click here to show English readme!](https://github.com/appleneko2001/tak2flac/blob/master/README.md)
+[Cannot understand? Click here to show English readme! (but my english could very bad so plz do not be mad)](https://github.com/appleneko2001/tak2flac/blob/master/README.md)
 
 # tak2flac
 依靠 FFMpeg 和 FFProbe 的簡易TAK (托馬斯無損音質壓縮編碼) 音訊檔分離器. 關於TAK音訊檔的更多資訊: [維基百科](https://zh.wikipedia.org/wiki/TAK), [Hydrogenaudio 百科](https://wiki.hydrogenaud.io/index.php?title=TAK), [百度百科 (簡體中文)](https://baike.baidu.com/item/Tak)
@@ -12,7 +12,19 @@
 
 ### 如何使用
 ```sh
-tak2flac -i "tak檔案位置" [-o "輸出目錄"] [-cue "附加cue檔案位置"]
+tak2flac -i "tak檔案位置" [-o "輸出目錄"] [-cue "附加cue檔案位置"] [-s] [-v] [-b]
+    "<input_file>" 選擇需要被切割的媒體檔案 可以是 tak檔案類型 也可以是FFMPEG支援的 並且已經內置了Cuesheet數據
+                   如果沒有內置也沒關係. "-i" 爲可選 
+    -cue "file.cue" 選擇外部的Cuesheet數據檔案 如果妳的媒體沒有內置Cuesheet數據
+    -s  使用新的方式建立時間線 (大部分情況下會比舊的方式縮短了一些)
+    -v  顯示執行過程  (Verbose output)
+    -b  使用順序執行 (關閉一次性完成工作功能 分序執行)
+範例:
+    tak2flac "media.tak"  // 最簡單的方式
+    tak2flac -i "media.tak" -s  // 選擇media.tak, 並使用新的建立時間線方式.
+    tak2flac "media.flac" -cue "media.cue" -s -b  // 選擇media.flac, 並選擇外部cuesheet數據檔案, 關閉"一次性完成"功能避免部分問題
+    tak2flac -i "audio_media.flac" -cue "audio_media.cue" -o "./output" -s -b -v  // 選擇audio_media.flac, 並選擇外部cuesheet數據檔案
+                // 指定一個輸出目錄 啟用顯示執行過程 啟用新的時間線計算 並且關閉"一次性完成"功能 
 ```
 
 ### 安裝

@@ -12,7 +12,20 @@ Simple TAK (Tom's Lossless Audio Kompressor) audio splitter with FFMpeg and FFPr
 
 ### How to use
 ```sh
-tak2flac -i "input.tak" [-o "output_path"] [-cue "additional_cue_path"]
+tak2flac [-i] "<input_file>" [-o "output_path"] [-cue "additional_cue_path"] [-s] [-v] [-b]
+    "<input_file>" Input a media file that used for split. It should be .tak format, or other format that 
+                   ffmpeg supported and integrated cuesheet data. "-i" are optional.
+    -cue "file.cue" Input a external cuesheet data file. When your media file are not integrated it.
+    -s  Use newer method to create timelines (but timelines will get shorter for most cases)
+    -v  Verbose output
+    -b  Disable mixed ffmpeg parameter mode (Disable batch mode) //Idk how to explain it right way but in general cases will launch FFMPEG with mixed parameter
+                    // after defines this argument will run FFMPEG in multiple times (according to counts of split).
+Example:
+    tak2flac "media.tak"  // Simple way
+    tak2flac -i "media.tak" -s  // Input tak file and use newer method to create timeline
+    tak2flac "media.flac" -cue "media.cue" -s -b  // Input flac file, cuesheet file, disable batch mode and make timelines shorter
+    tak2flac -i "audio_media.flac" -cue "audio_media.cue" -o "./output" -s -b -v  // Input flac file, cuesheet file, define output
+                //directory, enable almost full verbose, disable batch mode and make timelines shorter
 ```
 
 ### Install
