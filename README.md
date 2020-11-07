@@ -6,9 +6,9 @@ Simple TAK (Tom's Lossless Audio Kompressor) audio splitter with FFMpeg and FFPr
 ### Requirements
 * Latest FFMpeg and FFProbe binaries
 * Environment variables that contains path of FFMpeg and FFProbe binaries
-* (For Windows).Net framework 4 (Windows 7 or newer are installed with OS)
+* (For Windows).Net framework 4 (Windows 7 or newer are installed with OS so you don't need to install them)
 * (For Linux) ~~Mono runtime that supports .Net framework 4~~ USE DOTNET CORE 3.1 INSTEAD!!! [Official instructions of install .Net Core](https://docs.microsoft.com/dotnet/core/install/linux-package-managers)
-* (For Linux) Be sure your linux OS architecture are x64, if you want use dotNet Core. Otherwize use mono recommended.
+* (For Linux) Be sure your linux OS architecture are x64, if you want use .NET Core binaries. Otherwize you should use mono insteaded.
 
 ### How to use
 ```sh
@@ -30,7 +30,7 @@ Example:
 
 ### Install
 #### Install it with hard way
-* Windows way:
+* For Windows OS:
   * Download [FFMpeg](https://ffmpeg.org/download.html) if you don't have it.
   * Extract FFMpeg archive file to somewhere, for example, to C:\Program files\FFMpeg
   * Define two environment variable named FFMPEG_BINARY and FFPROBE_BINARY, they should be pointed to path of ffmpeg binary and ffprobe binary. 
@@ -40,18 +40,19 @@ Example:
   * It should be no any messages. Otherwize you should reconfigure it.
 
 
-* Linux way (sudo will be required for elevated privileges): 
-  * Use package manager (apt/yum/snap or etc..) install FFMpeg. ~~For install mono you can visit this page~~ We have dotNet Core Binaries so just install dotNet Core instead!
+* For Linux OS (elevated privileges will be required for all users): 
+  * Use package manager (apt/yum/snap or etc..) install FFMpeg.
   ```sh
   sudo apt update
   sudo apt install ffmpeg
   ``` 
+  * Install .NET Core 3 Runtime if your Linux OS doesn't have it. [Follow official instructions of install .Net Core](https://docs.microsoft.com/dotnet/core/install/linux-package-managers)
   * Write those things on last line of your ~/.profile (or similar like that)
   ```sh
     FFMPEG_BINARY="Path of ffmpeg binary"
     FFPROBE_BINARY="Path of ffprobe binary"
   ```
-  > !Tips! After set up environment variables they could not applied on current session. Reboot computer and changes will applied.
+  > !Tips! After set up environment variables may not applied on current session. Reboot computer or logout and changes will applied.
   * Download tak2flac core release zip file and unpack it to folder that PATH contained. For example, /usr/bin (or ~/.local/bin directory instead if .profile contains auto-detect and set PATH variables, no sudo requirement but only this user can use tak2flac)
   * Give file mode 0755 to tak2flac (chmod 0755 tak2flac).
   * Run terminal, type tak2flac and it should returned empty message.
@@ -67,7 +68,7 @@ chmod +x ./install-tak2flac.sh
 ### How it works?
 For works correctly should have .tak file with cue or both file, no cuesheet will not work.
 
-First, this program will use FFProbe to get input media information to gather cuesheet, duration and tags.
+First, this program will use FFProbe to get input media information to gather cuesheet datat, duration and tags.
 After that program will parses cuesheet data and generate process parameters for FFMpeg spliting, and writing tags.
 When our parameters ready for use, the FFMpeg will started working with our parameters and we will have splited media files from .tak
 
