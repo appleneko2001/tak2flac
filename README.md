@@ -68,9 +68,9 @@ chmod +x ./install-tak2flac.sh
 ### How it works?
 For works correctly should have .tak file with cue or both file, no cuesheet will not work.
 
-First, this program will use FFProbe to get input media information to gather cuesheet datat, duration and tags.
-After that program will parses cuesheet data and generate process parameters for FFMpeg spliting, and writing tags.
-When our parameters ready for use, the FFMpeg will started working with our parameters and we will have splited media files from .tak
+This program will use FFProbe to get media information from cuesheet data first.
+After that program will parses cuesheet data and generate parameters for start the progress of split file with FFMpeg, and writing tags.
+When our parameters ready for use, the FFMpeg will be launched to split .tak file.
 
 ### Want to improve this program
 Any suggestions are accepted and report bugs! Create issue and just tell me your suggestion or problem when using this program.
