@@ -1,6 +1,11 @@
 [看不懂英文嗎 來這裡!](https://github.com/appleneko2001/tak2flac/blob/master/README.zh-Hant.md)
 
-# tak2flac
+# tak2flac [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+>
+> Project is inactive and might archived due technical problems and I'm focusing on other projects than this.
+> Badge might be removed when I'm back to working this sh**
+>
+
 Simple TAK (Tom's Lossless Audio Kompressor) audio splitter with FFMpeg and FFProbe. For more about TAK format: [Hydrogenaudio Wiki](https://wiki.hydrogenaud.io/index.php?title=TAK)
 
 ### Requirements
